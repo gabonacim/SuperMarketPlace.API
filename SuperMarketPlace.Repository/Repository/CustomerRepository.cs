@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace SuperCustomerPlace.Repository.Repository
 {
-    public class CustomerRepository : IRepository<Customer>
+    public class CustomerRepository
     {
         MockDal accessDal;
 

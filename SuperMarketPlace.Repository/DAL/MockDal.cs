@@ -231,7 +231,7 @@ namespace SuperMarketPlace.Repository.DAL
             var cart = new Cart();
 
             cart.Items = new List<CartItem>();
-            
+
             cart.Items.AddRange(cartItemList);
 
             return new List<Cart>()

@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace SuperMarketPlace.Repository.Repository
 {
-    public class MarketRepository : IRepository<Market>
+    public class MarketRepository 
     {
         MockDal accessDal;
 
