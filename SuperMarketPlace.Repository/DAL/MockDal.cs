@@ -199,5 +199,45 @@ namespace SuperMarketPlace.Repository.DAL
 
             return customerList;
         }
+
+        public List<Cart> GetCarts()
+        {
+            var cartItemList = new List<CartItem>();
+
+            cartItemList.Add(new CartItem()
+            {
+                IdProduct = 1,
+                Name = "Sabão em pó",
+                Price = 15,
+                Quantity = 1
+            });
+
+            cartItemList.Add(new CartItem()
+            {
+                IdProduct = 15,
+                Name = "Saco de lixo",
+                Price = 9,
+                Quantity = 1
+            });
+
+            cartItemList.Add(new CartItem()
+            {
+                IdProduct = 500,
+                Name = "Refrigerante 2 L",
+                Price = 8,
+                Quantity = 1
+            });
+
+            var cart = new Cart();
+
+            cart.Items = new List<CartItem>();
+            
+            cart.Items.AddRange(cartItemList);
+
+            return new List<Cart>()
+            {
+                cart
+            };
+        }
     }
 }
