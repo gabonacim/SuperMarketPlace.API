@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SuperMarketPlace.Model\SuperMarketPlace.Model.csproj" />
+    <ProjectReference Include="..\SuperMarketPlace.Repository\SuperMarketPlace.Repository.csproj" />
   </ItemGroup>
 
 </Project>

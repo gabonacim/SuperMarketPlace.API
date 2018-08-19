@@ -1,5 +1,5 @@
 ﻿using SuperMarketPlace.Repository.DAL;
-using SuperMarketPlace.Repository.Model;
+using SuperMarketPlace.Model;
 
 namespace SuperCartPlace.Repository.Repository
 {

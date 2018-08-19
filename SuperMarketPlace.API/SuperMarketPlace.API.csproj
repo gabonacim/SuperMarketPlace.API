@@ -131,9 +131,13 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SuperMarketPlace.Repository\SuperMarketPlace.Repository.csproj">
-      <Project>{1c4b9f3c-340b-44c9-b4a1-3de5bb6ff91b}</Project>
-      <Name>SuperMarketPlace.Repository</Name>
+    <ProjectReference Include="..\SuperMarketPlace.Business\SuperMarketPlace.Business.csproj">
+      <Project>{e9bd326c-c5e4-41c8-afae-ac89e5c4455b}</Project>
+      <Name>SuperMarketPlace.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperMarketPlace.Model\SuperMarketPlace.Model.csproj">
+      <Project>{37e216cc-6167-4131-bc4b-2517f0fd0774}</Project>
+      <Name>SuperMarketPlace.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

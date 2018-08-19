@@ -1,5 +1,5 @@
-﻿using SuperCartPlace.Repository.Repository;
-using SuperMarketPlace.Repository.Model;
+﻿using SuperMarketPlace.Business.Services;
+using SuperMarketPlace.Model;
 using System.Net;
 using System.Web.Http;
 
@@ -7,16 +7,16 @@ namespace SuperCustomerPlace.API.Controllers
 {
     public class CartController : ApiController
     {
-        private CartRepository repository;
+        private CartService service;
 
         public CartController()
         {
-            repository = new CartRepository();
+            service = new CartService();
         }
 
         public Cart Get()
         {
-            return repository.Get();
+            return service.Get();
         }
 
         public void Post([FromBody]CartItem value)
@@ -26,7 +26,7 @@ namespace SuperCustomerPlace.API.Controllers
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
 
-            repository.Add(value);
+            service.Add(value);
         }
 
         public void Delete(long id)
@@ -36,7 +36,7 @@ namespace SuperCustomerPlace.API.Controllers
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            repository.Delete(id);
+            service.Delete(id);
         }
     }
 }

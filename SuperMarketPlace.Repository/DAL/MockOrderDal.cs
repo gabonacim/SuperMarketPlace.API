@@ -1,4 +1,4 @@
-﻿using SuperMarketPlace.Repository.Model;
+﻿using SuperMarketPlace.Model;
 using System;
 using System.Collections.Generic;
 

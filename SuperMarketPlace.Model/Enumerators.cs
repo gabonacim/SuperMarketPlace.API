@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperMarketPlace.Repository.Model
+namespace SuperMarketPlace.Model
 {
     public enum OrderStatusEnum
     {

@@ -1,5 +1,5 @@
 ﻿using SuperCustomerPlace.Repository.DAL;
-using SuperMarketPlace.Repository.Model;
+using SuperMarketPlace.Model;
 using SuperTPlace.Repository.DAL;
 using System.Collections.Generic;
 

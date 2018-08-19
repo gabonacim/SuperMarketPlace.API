@@ -1,4 +1,4 @@
-﻿namespace SuperMarketPlace.Repository.Model
+﻿namespace SuperMarketPlace.Model
 {
     public class CartItem
     {

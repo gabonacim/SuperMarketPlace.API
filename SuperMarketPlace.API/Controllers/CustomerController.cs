@@ -1,5 +1,5 @@
-﻿using SuperCustomerPlace.Repository.Repository;
-using SuperMarketPlace.Repository.Model;
+﻿using SuperMarketPlace.Business.Services;
+using SuperMarketPlace.Model;
 using System.Net;
 using System.Web.Http;
 
@@ -7,18 +7,18 @@ namespace SuperCustomerPlace.API.Controllers
 {
     public class CustomerController : ApiController
     {
-        private CustomerRepository repository;
+        private CustomerService service;
 
         public CustomerController()
         {
-            repository = new CustomerRepository();
+            service = new CustomerService();
         }
 
         [HttpPost]
         [Route("api/customer/login")]
         public void Login([FromBody]Customer customer)
         {
-            if (repository.Login(customer) == false)
+            if (service.Login(customer) == false)
             {
                 throw new HttpResponseException(HttpStatusCode.Forbidden);
             }
@@ -28,7 +28,7 @@ namespace SuperCustomerPlace.API.Controllers
         [Route("api/customer/me")]
         public Customer Me()
         {
-            var customer = repository.Get(1);
+            var customer = service.Me();
 
             if (customer == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);

@@ -1,5 +1,5 @@
-﻿using SuperMarketPlace.Repository.Model;
-using SuperMarketPlace.Repository.Repository;
+﻿using SuperMarketPlace.Business.Services;
+using SuperMarketPlace.Model;
 using System.Collections.Generic;
 using System.Net;
 using System.Web.Http;
@@ -8,21 +8,21 @@ namespace SuperMarketPlace.API.Controllers
 {
     public class ProductController : ApiController
     {
-        private ProductRepository repository;
+        private ProductService Service;
 
         public ProductController()
         {
-            repository = new ProductRepository();
+            Service = new ProductService();
         }
 
         public IEnumerable<Product> Get()
         {
-            return repository.GetAll();
+            return Service.GetAll();
         }
 
         public Product Get(long id)
         {
-            var product = repository.Get(id);
+            var product = Service.Get(id);
 
             if (product == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
@@ -37,7 +37,7 @@ namespace SuperMarketPlace.API.Controllers
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
 
-            repository.Add(value);
+            Service.Add(value);
         }
 
         public void Put(int id, [FromBody]Product value)
@@ -47,7 +47,7 @@ namespace SuperMarketPlace.API.Controllers
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            repository.Update(value);
+            Service.Update(value);
         }
 
         public void Delete(long id)
@@ -57,7 +57,7 @@ namespace SuperMarketPlace.API.Controllers
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            repository.Delete(id);
+            Service.Delete(id);
         }
     }
 }

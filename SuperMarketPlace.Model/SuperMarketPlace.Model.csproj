@@ -4,8 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SuperMarketPlace.Model\SuperMarketPlace.Model.csproj" />
-  </ItemGroup>
-
 </Project>

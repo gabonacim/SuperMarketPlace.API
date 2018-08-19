@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SuperMarketPlace.Repository.Model
+namespace SuperMarketPlace.Model
 {
     public class Order
     {

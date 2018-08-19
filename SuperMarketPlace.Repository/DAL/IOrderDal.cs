@@ -1,4 +1,4 @@
-﻿using SuperMarketPlace.Repository.Model;
+﻿using SuperMarketPlace.Model;
 
 namespace SuperMarketPlace.Repository.DAL
 {
