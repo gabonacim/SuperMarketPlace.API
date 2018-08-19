@@ -1,43 +1,37 @@
 ﻿using SuperMarketPlace.Repository.DAL;
 using SuperMarketPlace.Repository.Model;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace SuperCartPlace.Repository.Repository
 {
     public class CartRepository
     {
-        MockDal accessDal;
+        ICartDal accessDal;
 
         public CartRepository()
         {
-            accessDal = new MockDal();
+            accessDal = new MockCartDal();
         }
 
         public void Add(CartItem entity)
         {
-            var cart = accessDal.GetCarts();
+            var cart = accessDal.Get();
 
             if (cart == null)
             {
-                cart = new List<Cart>();
+                cart = new Cart();
             }
 
-            cart.First().Items.Add(entity);
+            cart.Items.Add(entity);
         }
 
         public Cart Get()
         {
-            return accessDal.GetCarts().FirstOrDefault();
+            return accessDal.Get();
         }
 
         public void Delete(long idProduct)
         {
-            var cart = Get();
-
-            var cartItem = cart.Items.Where(i => i.IdProduct == idProduct).FirstOrDefault();
-
-            cart.Items.Remove(cartItem);
+            accessDal.Delete(idProduct);
         }
     }
 }

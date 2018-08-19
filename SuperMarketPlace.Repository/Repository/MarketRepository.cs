@@ -1,48 +1,42 @@
 ﻿using SuperMarketPlace.Repository.DAL;
 using SuperMarketPlace.Repository.Model;
-using System;
+using SuperTPlace.Repository.DAL;
 using System.Collections.Generic;
-using System.Text;
-using System.Linq;
 
 namespace SuperMarketPlace.Repository.Repository
 {
-    public class MarketRepository 
+    public class MarketRepository
     {
-        MockDal accessDal;
+        ICrudDal<Market> accessDal;
 
         public MarketRepository()
         {
-            accessDal = new MockDal();
+            accessDal = new MarketDal();
         }
 
         public void Add(Market entity)
         {
-            accessDal.GetMarkets().Add(entity);
+            accessDal.Add(entity);
         }
 
         public Market Get(long id)
         {
-            return accessDal.GetMarkets().FirstOrDefault(ml => ml.Id == id);
+            return accessDal.Get(id);
         }
 
         public List<Market> GetAll()
         {
-            return accessDal.GetMarkets();
+            return accessDal.GetAll();
         }
 
         public void Delete(long id)
         {
-            var market = Get(id);
-
-            accessDal.GetMarkets().Remove(market);
+            accessDal.Delete(id);
         }
 
         public void Update(Market entity)
         {
-            var market = Get(entity.Id);
-
-            market = entity;
+            accessDal.Update(entity);
         }
     }
 }
