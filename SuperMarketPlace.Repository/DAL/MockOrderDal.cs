@@ -1,20 +1,24 @@
 ﻿using SuperMarketPlace.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SuperMarketPlace.Repository.DAL
 {
     public class MockOrderDal : IOrderDal
     {
-        private List<Order> OrderList;
+        private List<Order> orderList;
+
+        public MockOrderDal()
+        {
+            orderList = new List<Order>();
+        }
 
         public void AddOrder(Order order)
         {
-            OrderList = new List<Order>();
-
             order.IdOrder = 1;
 
-            OrderList.Add(order);
+            orderList.Add(order);
         }
 
         public Order GetProcessedOrder(long idOrder)
@@ -30,7 +34,7 @@ namespace SuperMarketPlace.Repository.DAL
             {
                 order.Status = OrderStatusEnum.PROCESSED;
 
-                order.ProductList = new List<OrderProduct>();
+                order.OrderProductList = new List<OrderProduct>();
 
                 var orderProduct = new OrderProduct();
 
@@ -64,7 +68,7 @@ namespace SuperMarketPlace.Repository.DAL
                     AdressState = "Estado"
                 };
 
-                order.ProductList.Add(orderProduct);
+                order.OrderProductList.Add(orderProduct);
 
                 var orderProduct2 = new OrderProduct();
 
@@ -96,10 +100,18 @@ namespace SuperMarketPlace.Repository.DAL
                     AdressState = "Estado"
                 };
 
-                order.ProductList.Add(orderProduct2);
+                order.OrderProductList.Add(orderProduct2);
             }
 
             return order;
+        }
+
+        public void UpdateOrderStatus(long idOrder, OrderStatusEnum status)
+        {
+            var order = orderList.FirstOrDefault(ol => ol.IdOrder == idOrder);
+
+            if (order != null)
+                order.Status = status;
         }
     }
 }

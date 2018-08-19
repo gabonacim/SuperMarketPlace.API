@@ -1,5 +1,6 @@
 ﻿using SuperMarketPlace.Repository.DAL;
 using SuperMarketPlace.Model;
+using System;
 
 namespace SuperOrderPlace.Repository.Repository
 {
@@ -12,6 +13,8 @@ namespace SuperOrderPlace.Repository.Repository
             accessDal = new MockOrderDal();
         }
 
+        public object UpdateOrder { get; set; }
+
         public Order AddOrder()
         {
             var newOrder = new Order()
@@ -22,6 +25,11 @@ namespace SuperOrderPlace.Repository.Repository
             accessDal.AddOrder(newOrder);
 
             return newOrder;
+        }
+
+        public void UpdateOrderStatus(long idOrder, OrderStatusEnum status)
+        {
+            accessDal.UpdateOrderStatus(idOrder, status);
         }
 
         public Order GetProcessed(long idOrder)

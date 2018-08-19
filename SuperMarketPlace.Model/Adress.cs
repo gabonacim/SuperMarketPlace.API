@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SuperMarketPlace.Model
 {
-    public class Adress
+    public class Address
     {
         public string AdressZipCode { get; set; }
 

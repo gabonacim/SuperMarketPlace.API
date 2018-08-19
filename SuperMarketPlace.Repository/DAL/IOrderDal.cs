@@ -7,5 +7,7 @@ namespace SuperMarketPlace.Repository.DAL
         void AddOrder(Order order);
 
         Order GetProcessedOrder(long idOrder);
+
+        void UpdateOrderStatus(long idOrder, OrderStatusEnum status);
     }
 }

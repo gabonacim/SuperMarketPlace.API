@@ -1,6 +1,6 @@
 ﻿namespace SuperMarketPlace.Model
 {
-    public class Customer : Adress
+    public class Customer : Address
     {
         public long Id { get; set; }
 

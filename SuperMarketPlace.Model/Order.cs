@@ -8,6 +8,6 @@ namespace SuperMarketPlace.Model
 
         public OrderStatusEnum Status { get; set; }
 
-        public List<OrderProduct> ProductList { get; set; }
+        public List<OrderProduct> OrderProductList { get; set; }
     }
 }
