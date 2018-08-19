@@ -5,13 +5,11 @@ namespace SuperMarketPlace.Repository.DAL
 {
     public class MockDal
     {
-        private List<Market> MarketList;
-
-        public MockDal()
+        public List<Market> GetMarkets()
         {
-            MarketList = new List<Market>();
+            var marketList = new List<Market>();
 
-            MarketList.Add(new Market()
+            marketList.Add(new Market()
             {
                 Id = 1,
                 Name = "Mercado da Esquina",
@@ -26,7 +24,7 @@ namespace SuperMarketPlace.Repository.DAL
                 AdressState = "Estado"
             });
 
-            MarketList.Add(new Market()
+            marketList.Add(new Market()
             {
                 Id = 2,
                 Name = "Movile Hack SuperMarket",
@@ -40,7 +38,7 @@ namespace SuperMarketPlace.Repository.DAL
                 AdressState = "Estado"
             });
 
-            MarketList.Add(new Market()
+            marketList.Add(new Market()
             {
                 Id = 3,
                 Name = "Carrefour Bairro",
@@ -54,7 +52,7 @@ namespace SuperMarketPlace.Repository.DAL
                 AdressState = "Estado"
             });
 
-            MarketList.Add(new Market()
+            marketList.Add(new Market()
             {
                 Id = 4,
                 Name = "Mercado do Xerox",
@@ -67,11 +65,45 @@ namespace SuperMarketPlace.Repository.DAL
                 AdressCity = "Cidade da Esquina",
                 AdressState = "Estado"
             });
+
+            return marketList;
         }
 
-        public List<Market> GetMarkets()
+        public List<Customer> GetCustomers()
         {
-            return MarketList;
+            var customerList = new List<Customer>();
+
+            customerList.Add(new Customer()
+            {
+                Id = 1,
+                Name = "Maria Aparecida",
+                Email = "maria.aparecida@smarket.com",
+                Password = "********",
+                AdressZipCode = "031130-030",
+                AdressName = "Avenida Piaui",
+                AdressNumber = "95",
+                AdressComplement = "Perto do Mercado",
+                AdressNeighborhood = "Vila Clementino",
+                AdressCity = "São Paulo",
+                AdressState = "SP"
+            });
+
+            customerList.Add(new Customer()
+            {
+                Id = 1,
+                Name = "Cliente",
+                Email = "cliente@cliente.com",
+                Password = "********",
+                AdressZipCode = "12345678",
+                AdressName = "Rua da Esquina",
+                AdressNumber = "123",
+                AdressComplement = "Perto da esquina",
+                AdressNeighborhood = "Bairro",
+                AdressCity = "Cidade da Esquina",
+                AdressState = "Estado"
+            });
+
+            return customerList;
         }
     }
 }
