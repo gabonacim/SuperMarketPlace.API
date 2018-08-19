@@ -64,7 +64,7 @@ namespace SuperCustomerPlace.API.Controllers
         //}
 
         [HttpPost]
-        [Route("api/customers/login")]
+        [Route("api/customer/login")]
         public void Login([FromBody]Customer customer)
         {
             if (repository.Login(customer) == false)
@@ -74,7 +74,7 @@ namespace SuperCustomerPlace.API.Controllers
         }
 
         [HttpGet]
-        [Route("api/customers/me")]
+        [Route("api/customer/me")]
         public Customer Me()
         {
             var customer = repository.Get(1);

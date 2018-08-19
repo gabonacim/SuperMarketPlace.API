@@ -105,5 +105,99 @@ namespace SuperMarketPlace.Repository.DAL
 
             return customerList;
         }
+
+        public List<Product> GetProducts()
+        {
+            var customerList = new List<Product>();
+
+            customerList.Add(new Product()
+            {
+                Id = 1,
+                IdMarket = 1,
+                Type = new ProductType()
+                {
+                    Id = 1000,
+                    Name = "Sabão em Pó OMO - 1 KG",
+                    BarCode = "27891150008506"
+                },
+                Name = "OMO 1 KG",
+                Price = 10,
+                StockQuantity = 100
+            });
+
+            customerList.Add(new Product()
+            {
+                Id = 2,
+                IdMarket = 2,
+                Type = new ProductType()
+                {
+                    Id = 1000,
+                    Name = "Sabão em Pó OMO - 1 KG",
+                    BarCode = "27891150008506"
+                },
+                Name = "OMO - Sabão 1 KG",
+                Price = 11,
+                StockQuantity = 50
+            });
+
+            customerList.Add(new Product()
+            {
+                Id = 3,
+                IdMarket = 3,
+                Type = new ProductType()
+                {
+                    Id = 1000,
+                    Name = "Sabão em Pó OMO - 1 KG",
+                    BarCode = "27891150008506"
+                },
+                Name = "OMO - Sabão 1 KG",
+                Price = 9,
+                StockQuantity = 1000
+            });
+
+            customerList.Add(new Product()
+            {
+                Id = 4,
+                IdMarket = 3,
+                Type = new ProductType()
+                {
+                    Id = 1000,
+                    Name = "Saco de lixo - 100 L - Marca X",
+                    BarCode = "1312321123"
+                },
+                Name = "Saco de lixo 100 L",
+                Price = 5
+            });
+
+            customerList.Add(new Product()
+            {
+                Id = 5,
+                IdMarket = 2,
+                Type = new ProductType()
+                {
+                    Id = 1000,
+                    Name = "Saco de lixo - 100 L - Marca X",
+                    BarCode = "1312321123"
+                },
+                Name = "Saco de lixo 100 L",
+                Price = 8
+            });
+
+            customerList.Add(new Product()
+            {
+                Id = 6,
+                IdMarket = 1,
+                Type = new ProductType()
+                {
+                    Id = 1000,
+                    Name = "Saco de lixo - 100 L - Marca X",
+                    BarCode = "1312321123"
+                },
+                Name = "Saco de lixo 100 L",
+                Price = 9
+            });
+
+            return customerList;
+        }
     }
 }
