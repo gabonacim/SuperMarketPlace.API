@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SuperMarketPlace.API
 {
@@ -6,6 +7,8 @@ namespace SuperMarketPlace.API
     {
         public static void Register(HttpConfiguration config)
         {
+            EnableCrossSiteRequests(config);
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
@@ -13,6 +16,16 @@ namespace SuperMarketPlace.API
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+        }
+
+        private static void EnableCrossSiteRequests(HttpConfiguration config)
+        {
+            var cors = new EnableCorsAttribute(
+                origins: "*",
+                headers: "*",
+                methods: "*");
+
+            config.EnableCors(cors);
         }
     }
 }
