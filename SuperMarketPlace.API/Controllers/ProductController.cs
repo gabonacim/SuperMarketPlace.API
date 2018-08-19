@@ -22,12 +22,12 @@ namespace SuperMarketPlace.API.Controllers
 
         public Product Get(long id)
         {
-            var Product = repository.Get(id);
+            var product = repository.Get(id);
 
-            if (Product == null)
+            if (product == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            return Product;
+            return product;
         }
 
         public void Post([FromBody]Product value)
